@@ -58,9 +58,9 @@ class Grid(_widget.OutputAreaWidget):
   def clear_cell(self, row=None, col=None):
     """Clears given cell. If row/col are None clears active cell."""
     if row is not None:
-      if row < 0 or col >= self.rows:
+      if row < 0 or row >= self.rows:
         raise ValueError('%d is not a valid row' % row)
-      if col < 0 or col >= self.cols:
+      if col < 0 or col >= self.columns:
         raise ValueError('%d is not a valid column' % col)
       cellid = self._get_cell_id(row, col)
     else:
